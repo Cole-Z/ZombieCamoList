@@ -74,7 +74,7 @@
 			weaponList.ItemHeight = 15;
 			weaponList.Location = new Point(44, 108);
 			weaponList.Name = "weaponList";
-			weaponList.Size = new Size(269, 544);
+			weaponList.Size = new Size(269, 274);
 			weaponList.TabIndex = 1;
 			toolTip1.SetToolTip(weaponList, "Click on  a row to display  details");
 			weaponList.SelectedIndexChanged += weaponList_SelectedIndexChanged;
@@ -188,7 +188,7 @@
 			// GetData
 			// 
 			GetData.BackColor = SystemColors.ButtonFace;
-			GetData.Location = new Point(44, 662);
+			GetData.Location = new Point(44, 388);
 			GetData.Name = "GetData";
 			GetData.Size = new Size(75, 23);
 			GetData.TabIndex = 3;
