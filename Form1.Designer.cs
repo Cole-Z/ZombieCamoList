@@ -50,6 +50,7 @@
 			btnSaveProgress = new Button();
 			percentBox = new TextBox();
 			btnUpdateProgress = new Button();
+			toolTip1 = new ToolTip(components);
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvCamoProgress).BeginInit();
 			((System.ComponentModel.ISupportInitialize)weaponBindingSource).BeginInit();
@@ -75,6 +76,7 @@
 			weaponList.Name = "weaponList";
 			weaponList.Size = new Size(269, 544);
 			weaponList.TabIndex = 1;
+			toolTip1.SetToolTip(weaponList, "Click on  a row to display  details");
 			weaponList.SelectedIndexChanged += weaponList_SelectedIndexChanged;
 			// 
 			// panel1
@@ -96,9 +98,9 @@
 			label2.AutoSize = true;
 			label2.Location = new Point(15, 178);
 			label2.Name = "label2";
-			label2.Size = new Size(140, 15);
+			label2.Size = new Size(222, 15);
 			label2.TabIndex = 8;
-			label2.Text = "Camos Unlocked at Level";
+			label2.Text = "Camos Unlocked at Level: (Gold Enigma)\r\n";
 			// 
 			// camoUnlockLabel
 			// 
@@ -296,5 +298,6 @@
 		private Label label2;
 		private TextBox percentBox;
 		private Button btnUpdateProgress;
+		private ToolTip toolTip1;
 	}
 }
