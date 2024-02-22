@@ -291,24 +291,82 @@ namespace ZombieCamoList
 			ProgressBar();        // update progress bar
 		}
 
+		///  Button to add a weapon to the list box. Does not save yet, need to add method to save the file.
+		
+		private void button1_Click(object sender, EventArgs e)
+		{
+			// Weapon class
+			string name = textBox1.Text;
+			string type = textBox2.Text;
+
+			// Weapon Levels class
+			string lvlOne = textBox3.Text;
+			string challOne = textBox4.Text;
+			string camoOne = textBox5.Text;
+
+			string lvlTwo = textBox6.Text;
+			string challTwo = textBox7.Text;
+			string camoTwo = textBox8.Text;
+
+			string lvlThree = textBox9.Text;
+			string challThree = textBox10.Text;
+			string camoThree = textBox11.Text;
+
+			if (weapons.Length >= 99)
+			{
+				MessageBox.Show("Weapon list is full, remove an item to update.", "Error");
+			}
+			else if (name == "" || type == "")
+			{
+				MessageBox.Show("Please enter the Name and Type", "Missing Fields!");
+			}
+			else
+			{
+
+				Weapon newWeapon = new Weapon(name, type);
+				newWeapon.Levels.Add(new WeaponLevel(int.Parse(lvlOne), challOne, camoOne));
+				newWeapon.Levels.Add(new WeaponLevel(int.Parse(lvlTwo), challTwo, camoTwo));
+				newWeapon.Levels.Add(new WeaponLevel(int.Parse(lvlThree), challThree, camoThree));
+
+				// Add the new weapon to the array
+				weapons[weapons.Length - 1] = newWeapon;
+
+				MessageBox.Show("New weapon added successfully!", "Success");
+
+				PopulateWeaponList();
+			}
+		}
+
 		private void btnSaveProgress_Click(object sender, EventArgs e)
 		{
 			SaveCheckboxStatus();
 		}
 
-		private void btnShowAll_Click(object sender, EventArgs e)
+
+		private void btnAddWeapon_Click(object sender, EventArgs e)
 		{
-			PopulateWeaponList();
+			groupBox1.Show();
 		}
 
-		private void btnLoadouts_Click(object sender, EventArgs e)
+		private void btnClose_Click(object sender, EventArgs e)
 		{
-
+			textBox1.Text = string.Empty;
+			textBox2.Text = string.Empty;
+			textBox3.Text = string.Empty;
+			textBox4.Text = string.Empty;
+			textBox5.Text = string.Empty;
+			textBox6.Text = string.Empty;
+			textBox7.Text = string.Empty;
+			textBox8.Text = string.Empty;
+			textBox9.Text = string.Empty;
+			textBox10.Text = string.Empty;
+			textBox11.Text = string.Empty;
+			groupBox1.Hide();
 		}
 
 		private void label1_Click(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		private void weaponInfoTextBox_TextChanged(object sender, EventArgs e)
@@ -317,6 +375,16 @@ namespace ZombieCamoList
 		}
 
 		private void dgvCamoProgress_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label8_Click(object sender, EventArgs e)
 		{
 
 		}

@@ -11,7 +11,7 @@ namespace ZombieCamoList
         public string Name { get; set; }
 		public string Region { get; set; }
 
-		public PointOfInterest(string name, string region, string zoneDifficulty)
+		public PointOfInterest(string name, string region)
 		{
 			Name = name;
 			Region = region;
