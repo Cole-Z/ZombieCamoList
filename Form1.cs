@@ -29,6 +29,12 @@ namespace ZombieCamoList
 		public string myFile;
 		public int recordCount;
 
+		// Tiers on the MW3 Zombies map
+		public enum ZoneTier
+		{
+			Tier1, Tier2, Tier3
+		}
+
 		public Form1()
 		{
 			InitializeComponent();

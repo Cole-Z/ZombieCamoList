@@ -51,6 +51,8 @@
 			percentBox = new TextBox();
 			btnUpdateProgress = new Button();
 			toolTip1 = new ToolTip(components);
+			btnAddWeapon = new Button();
+			groupBox1 = new GroupBox();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvCamoProgress).BeginInit();
 			((System.ComponentModel.ISupportInitialize)weaponBindingSource).BeginInit();
@@ -242,6 +244,25 @@
 			btnUpdateProgress.UseVisualStyleBackColor = true;
 			btnUpdateProgress.Click += btnUpdateProgress_Click;
 			// 
+			// btnAddWeapon
+			// 
+			btnAddWeapon.Location = new Point(193, 388);
+			btnAddWeapon.Name = "btnAddWeapon";
+			btnAddWeapon.Size = new Size(120, 23);
+			btnAddWeapon.TabIndex = 10;
+			btnAddWeapon.Text = "Add a new weapon";
+			btnAddWeapon.UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			groupBox1.BackColor = SystemColors.ButtonFace;
+			groupBox1.Location = new Point(45, 445);
+			groupBox1.Name = "groupBox1";
+			groupBox1.Size = new Size(268, 211);
+			groupBox1.TabIndex = 11;
+			groupBox1.TabStop = false;
+			groupBox1.Text = "groupBox1";
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -249,6 +270,8 @@
 			AutoSize = true;
 			BackColor = SystemColors.ActiveCaption;
 			ClientSize = new Size(910, 722);
+			Controls.Add(groupBox1);
+			Controls.Add(btnAddWeapon);
 			Controls.Add(btnUpdateProgress);
 			Controls.Add(percentBox);
 			Controls.Add(btnSaveProgress);
@@ -299,5 +322,7 @@
 		private TextBox percentBox;
 		private Button btnUpdateProgress;
 		private ToolTip toolTip1;
+		private Button btnAddWeapon;
+		private GroupBox groupBox1;
 	}
 }
