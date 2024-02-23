@@ -254,7 +254,7 @@ namespace ZombieCamoList
 		{
 			try
 			{
-				int totalLines = 44; // length of the weapon list 
+				int totalLines = weaponList.Items.Count; // length of the weapon list 
 				int count = 0;
 
 				using (StreamReader sr = new StreamReader(progressFile))
@@ -294,8 +294,7 @@ namespace ZombieCamoList
 			ProgressBar();        // update progress bar
 		}
 
-		///  Button to add a weapon to the list box. Does not save yet, need to add method to save the file.
-		
+		///  Button to add a weapon to the list box. Saves to file, need to add a delete option
 		private void button1_Click(object sender, EventArgs e)
 		{
 			// Weapon class
@@ -315,31 +314,24 @@ namespace ZombieCamoList
 			string challThree = textBox10.Text;
 			string camoThree = textBox11.Text;
 
-			if (weapons.Length >= 99)
+			try
 			{
-				MessageBox.Show("Weapon list is full, remove an item to update.", "Error");
-			}
-			else if (name == "" || type == "")
-			{
-				MessageBox.Show("Please enter the Name and Type", "Missing Fields!");
-			}
-			else
-			{
+				using (StreamWriter sw = File.AppendText(myFile))
+				{
+					// Write the fields to the file
+					sw.WriteLine($"{name},{type},{lvlOne},{challOne},{camoOne},{lvlTwo},{challTwo},{camoTwo},{lvlThree},{challThree},{camoThree}");
+				}
 
-				Weapon newWeapon = new Weapon(name, type);
-				newWeapon.Levels.Add(new WeaponLevel(int.Parse(lvlOne), challOne, camoOne));
-				newWeapon.Levels.Add(new WeaponLevel(int.Parse(lvlTwo), challTwo, camoTwo));
-				newWeapon.Levels.Add(new WeaponLevel(int.Parse(lvlThree), challThree, camoThree));
-
-				// Add the new weapon to the array
-				weapons[weapons.Length - 1] = newWeapon;
+				MessageBox.Show("New weapon added successfully! Reload Form to see newly added weapon", "Success");
 				ClearForm();
-
-				MessageBox.Show("New weapon added successfully!", "Success");
-
 				PopulateWeaponList();
 			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Error adding new weapon: {ex.Message}", "Error");
+			}
 		}
+
 
 		private void btnSaveProgress_Click(object sender, EventArgs e)
 		{
