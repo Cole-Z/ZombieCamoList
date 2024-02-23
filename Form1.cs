@@ -46,31 +46,9 @@ namespace ZombieCamoList
 			btnAddWeapon.Enabled = false;
 		}
 
-		/*######################################################################################################################
-		 * 
-		*/
-
-		private void GetData_Click(object sender, EventArgs e)
-		{
-			zombieeeee.ShowDialog();
-			myFile = zombieeeee.FileName;
-
-			try
-			{
-				// Call the common method to load data
-				LoadDataFromFile();
-
-				GetData.Enabled = false;
-				btnAddWeapon.Enabled = true;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show($"Error parsing file: {ex.Message}", "Error");
-			}
-		}
-
-		/*######################################################################################################################
-		*/
+		/// <summary>
+		/// Display methods and information about objects
+		/// </summary>
 
 		private void weaponList_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -80,7 +58,6 @@ namespace ZombieCamoList
 				string selectedWeaponInfo = weaponList.SelectedItem.ToString();
 				weaponInfoTextBox.Text = selectedWeaponInfo;
 			}
-			// Check if an item is selected
 			if (weaponList.SelectedIndex != -1)
 			{
 				Weapon selectedWeapon = weapons[weaponList.SelectedIndex];
@@ -98,13 +75,37 @@ namespace ZombieCamoList
 			}
 		}
 
+		private void PopulateWeaponList()
+		{
+			if (weapons != null)
+			{
+				weaponList.Items.Clear();
+
+				// using LINQ to display weapon objects with ShowWeaponInfo();
+
+				var weaponInfos = from weapon in weapons
+								  select weapon.ShowWeaponInfo();
+
+				weaponList.Items.AddRange(weaponInfos.ToArray());
+				label1.Text = "Showing all MW3 weapons";
+			}
+			else
+			{
+				MessageBox.Show("No weapon data available.", "Error");
+			}
+		}
+
+		/// <summary>
+		/// Data processing, loading and saving to the project text files
+		/// </summary>
+
 		private void LoadDataFromFile()
 		{
 			using (StreamReader sr = File.OpenText(myFile))
 			{
 				recordCount = File.ReadLines(myFile).Count() - 1;
 				weapons = new Weapon[recordCount];
-				sr.ReadLine(); // Skip header
+				sr.ReadLine();
 
 				int i = 0;
 				while (sr.Peek() != -1 && i < recordCount)
@@ -117,8 +118,8 @@ namespace ZombieCamoList
 				}
 
 				// populate weapon levels
-				sr.BaseStream.Position = 0; // Reset stream position to beginning of file
-				sr.ReadLine(); // Skip header again
+				sr.BaseStream.Position = 0; // set stream position to beginning of file
+				sr.ReadLine(); 
 
 				int j = 0;
 				while (sr.Peek() != -1 && j < recordCount)
@@ -127,12 +128,11 @@ namespace ZombieCamoList
 					string[] weaponTemp = line.Split(",");
 					Weapon currentWeapon = weapons[j];
 
-					// Add the levels, challenges, and camos to the current weapon
-					for (int k = 2; k < weaponTemp.Length; k += 3) // increment by 3 to grab fields (Level, Challenge, Camo).
+					// increment by 3 to grab fields (Level, Challenge, Camo).
+					for (int k = 2; k < weaponTemp.Length; k += 3) 
 					{
 						if (k + 2 < weaponTemp.Length)
 						{
-							// add WeaponLevel to the Levels list of the corresponding weapon
 							currentWeapon.Levels.Add(new WeaponLevel(int.Parse(weaponTemp[k]), weaponTemp[k + 1], weaponTemp[k + 2]));
 						}
 					}
@@ -141,43 +141,15 @@ namespace ZombieCamoList
 			}
 
 			PopulateWeaponList();
-			// Update UI
+			// Update UI for DGV
 			dgvCamoProgress.DataSource = weapons;
 			dgvCamoProgress.Columns[0].Width = 115;
 			dgvCamoProgress.Columns[1].Width = 115;
 			dgvCamoProgress.RowHeadersWidth = 30;
 
-			LoadCheckboxStatus(); // call LoadCheckboxStatus(); to update progress without user interaction.
-			ProgressBar();        // call ProgressBar(); for visual on progression on camos.
+			LoadCheckboxStatus(); // updates progress without user interaction.
+			ProgressBar();        // used for visual on progression on camos.
 		}
-
-		/*######################################################################################################################
-		 * 
-		 * // populates the listbox with weapon "Name" and "Type" from ShowWeaponInfo() in the Weapon.cs class.
-		*/
-
-		private void PopulateWeaponList()
-		{
-			if (weapons != null)
-			{
-				weaponList.Items.Clear();
-
-				foreach (var weapon in weapons)
-				{
-					string weaponInfo = weapon.ShowWeaponInfo();
-					weaponList.Items.Add(weaponInfo);
-				}
-
-				label1.Text = "Showing all MW3 weapons";
-			}
-			else
-			{
-				MessageBox.Show("No weapon data available.", "Error");
-			}
-		}
-
-		/*######################################################################################################################
-		*/
 
 		private void LoadCheckboxStatus()
 		{
@@ -214,9 +186,6 @@ namespace ZombieCamoList
 			}
 		}
 
-		/*######################################################################################################################
-		*/
-
 		private void SaveCheckboxStatus()
 		{
 			try
@@ -237,11 +206,7 @@ namespace ZombieCamoList
 			}
 		}
 
-		/*######################################################################################################################
-		 * 
-		 * Same method as SaveCheckboxStatus(), but getting rid of a message dialog for updated save.
-		*/
-
+		// Method is the same as SaveCheckboxStatus(), but removed MessageBox.Show for success.
 		private void UpdatedSave()
 		{
 			try
@@ -260,10 +225,6 @@ namespace ZombieCamoList
 				MessageBox.Show($"Error saving checkbox statuses: {ex.Message}", "Error");
 			}
 		}
-
-		/*######################################################################################################################
-		 * Method to calculate length of progressBar1
-		*/
 
 		private void ProgressBar()
 		{
@@ -296,10 +257,31 @@ namespace ZombieCamoList
 			}
 		}
 
-		/*######################################################################################################################
-		 * 
-		 * Button Methods
-		*/
+
+		/// <summary>
+		/// Button Methods for the form
+		/// </summary>
+		/// 
+
+		// Open File button
+		private void GetData_Click(object sender, EventArgs e)
+		{
+			zombieeeee.ShowDialog();
+			myFile = zombieeeee.FileName;
+
+			try
+			{
+				// Call the common method to load data
+				LoadDataFromFile();
+
+				GetData.Enabled = false;
+				btnAddWeapon.Enabled = true;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Error parsing file: {ex.Message}", "Error");
+			}
+		}
 
 		// Button to update progress while the app is running.
 		private void btnUpdateProgress_Click(object sender, EventArgs e)
@@ -337,7 +319,7 @@ namespace ZombieCamoList
 					sw.WriteLine($"{name},{type},{lvlOne},{challOne},{camoOne},{lvlTwo},{challTwo},{camoTwo},{lvlThree},{challThree},{camoThree}");
 				}
 
-				MessageBox.Show("New weapon added successfully! Reload Form to see newly added weapon", "Success");
+				MessageBox.Show("New weapon added successfully!", "Success");
 				ClearForm();
 				PopulateWeaponList();
 				LoadWeaponListOnUpdate(); // update the list and dgv in real time
@@ -348,23 +330,25 @@ namespace ZombieCamoList
 			}
 		}
 
-
+		// update progress bar file
 		private void btnSaveProgress_Click(object sender, EventArgs e)
 		{
 			SaveCheckboxStatus();
 		}
 
-
+		// button to add new weapon obj
 		private void btnAddWeapon_Click(object sender, EventArgs e)
 		{
 			groupBox1.Show();
 		}
 
+		// close/cancel adding new obj
 		private void btnClose_Click(object sender, EventArgs e)
 		{
 			ClearForm();
 		}
 
+		// clear the fields in the grpBox
 		private void ClearForm()
 		{
 			textBox1.Text = string.Empty;
