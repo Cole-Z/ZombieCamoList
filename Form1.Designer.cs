@@ -32,26 +32,6 @@
 			label1 = new Label();
 			weaponList = new ListBox();
 			panel1 = new Panel();
-			label2 = new Label();
-			camoUnlockLabel = new Label();
-			levelChallengeLabel = new Label();
-			typeLabel = new Label();
-			nameLabel = new Label();
-			dgvCamoProgress = new DataGridView();
-			nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			typeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-			camoComplete = new DataGridViewCheckBoxColumn();
-			weaponBindingSource = new BindingSource(components);
-			weaponInfoTextBox = new TextBox();
-			zombieeeee = new OpenFileDialog();
-			GetData = new Button();
-			weaponNameLabel = new Label();
-			progressBar1 = new ProgressBar();
-			btnSaveProgress = new Button();
-			percentBox = new TextBox();
-			btnUpdateProgress = new Button();
-			toolTip1 = new ToolTip(components);
-			btnAddWeapon = new Button();
 			groupBox1 = new GroupBox();
 			btnClose = new Button();
 			button1 = new Button();
@@ -80,10 +60,30 @@
 			label5 = new Label();
 			label4 = new Label();
 			label3 = new Label();
+			label2 = new Label();
+			camoUnlockLabel = new Label();
+			levelChallengeLabel = new Label();
+			typeLabel = new Label();
+			nameLabel = new Label();
+			dgvCamoProgress = new DataGridView();
+			nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			typeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+			camoComplete = new DataGridViewCheckBoxColumn();
+			weaponBindingSource = new BindingSource(components);
+			weaponInfoTextBox = new TextBox();
+			zombieeeee = new OpenFileDialog();
+			GetData = new Button();
+			weaponNameLabel = new Label();
+			progressBar1 = new ProgressBar();
+			btnSaveProgress = new Button();
+			percentBox = new TextBox();
+			btnUpdateProgress = new Button();
+			toolTip1 = new ToolTip(components);
+			btnAddWeapon = new Button();
 			panel1.SuspendLayout();
+			groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvCamoProgress).BeginInit();
 			((System.ComponentModel.ISupportInitialize)weaponBindingSource).BeginInit();
-			groupBox1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// label1
@@ -104,7 +104,7 @@
 			weaponList.ItemHeight = 15;
 			weaponList.Location = new Point(44, 108);
 			weaponList.Name = "weaponList";
-			weaponList.Size = new Size(269, 274);
+			weaponList.Size = new Size(269, 394);
 			weaponList.TabIndex = 1;
 			toolTip1.SetToolTip(weaponList, "Click on  a row to display  details");
 			weaponList.SelectedIndexChanged += weaponList_SelectedIndexChanged;
@@ -122,165 +122,6 @@
 			panel1.Name = "panel1";
 			panel1.Size = new Size(437, 303);
 			panel1.TabIndex = 2;
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Location = new Point(15, 178);
-			label2.Name = "label2";
-			label2.Size = new Size(222, 15);
-			label2.TabIndex = 8;
-			label2.Text = "Camos Unlocked at Level: (Gold Enigma)\r\n";
-			// 
-			// camoUnlockLabel
-			// 
-			camoUnlockLabel.BackColor = SystemColors.ButtonFace;
-			camoUnlockLabel.BorderStyle = BorderStyle.FixedSingle;
-			camoUnlockLabel.Location = new Point(18, 193);
-			camoUnlockLabel.Name = "camoUnlockLabel";
-			camoUnlockLabel.Size = new Size(400, 73);
-			camoUnlockLabel.TabIndex = 3;
-			camoUnlockLabel.Text = "Camo Unlock";
-			// 
-			// levelChallengeLabel
-			// 
-			levelChallengeLabel.BackColor = SystemColors.ButtonFace;
-			levelChallengeLabel.BorderStyle = BorderStyle.FixedSingle;
-			levelChallengeLabel.Location = new Point(18, 52);
-			levelChallengeLabel.Name = "levelChallengeLabel";
-			levelChallengeLabel.Size = new Size(400, 106);
-			levelChallengeLabel.TabIndex = 2;
-			levelChallengeLabel.Text = "Levels and Challenges";
-			// 
-			// typeLabel
-			// 
-			typeLabel.AutoSize = true;
-			typeLabel.Location = new Point(151, 24);
-			typeLabel.Name = "typeLabel";
-			typeLabel.Size = new Size(31, 15);
-			typeLabel.TabIndex = 1;
-			typeLabel.Text = "Type";
-			// 
-			// nameLabel
-			// 
-			nameLabel.AutoSize = true;
-			nameLabel.Location = new Point(18, 24);
-			nameLabel.Name = "nameLabel";
-			nameLabel.Size = new Size(39, 15);
-			nameLabel.TabIndex = 0;
-			nameLabel.Text = "Name";
-			// 
-			// dgvCamoProgress
-			// 
-			dgvCamoProgress.AutoGenerateColumns = false;
-			dgvCamoProgress.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvCamoProgress.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, typeDataGridViewTextBoxColumn, camoComplete });
-			dgvCamoProgress.DataSource = weaponBindingSource;
-			dgvCamoProgress.Location = new Point(439, 417);
-			dgvCamoProgress.Name = "dgvCamoProgress";
-			dgvCamoProgress.Size = new Size(375, 210);
-			dgvCamoProgress.TabIndex = 4;
-			dgvCamoProgress.CellContentClick += dgvCamoProgress_CellContentClick;
-			// 
-			// nameDataGridViewTextBoxColumn
-			// 
-			nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-			nameDataGridViewTextBoxColumn.HeaderText = "Name";
-			nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			// 
-			// typeDataGridViewTextBoxColumn
-			// 
-			typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-			typeDataGridViewTextBoxColumn.HeaderText = "Type";
-			typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-			// 
-			// camoComplete
-			// 
-			camoComplete.HeaderText = "Camo Complete";
-			camoComplete.Name = "camoComplete";
-			// 
-			// weaponBindingSource
-			// 
-			weaponBindingSource.DataSource = typeof(Weapon);
-			// 
-			// weaponInfoTextBox
-			// 
-			weaponInfoTextBox.Location = new Point(489, 70);
-			weaponInfoTextBox.Name = "weaponInfoTextBox";
-			weaponInfoTextBox.Size = new Size(355, 23);
-			weaponInfoTextBox.TabIndex = 4;
-			weaponInfoTextBox.TextChanged += weaponInfoTextBox_TextChanged;
-			// 
-			// zombieeeee
-			// 
-			zombieeeee.FileName = "openFileDialog1";
-			// 
-			// GetData
-			// 
-			GetData.BackColor = SystemColors.ButtonFace;
-			GetData.Location = new Point(44, 388);
-			GetData.Name = "GetData";
-			GetData.Size = new Size(75, 23);
-			GetData.TabIndex = 3;
-			GetData.Text = "Open File";
-			GetData.UseVisualStyleBackColor = false;
-			GetData.Click += GetData_Click;
-			// 
-			// weaponNameLabel
-			// 
-			weaponNameLabel.AutoSize = true;
-			weaponNameLabel.BackColor = SystemColors.ButtonFace;
-			weaponNameLabel.Location = new Point(407, 72);
-			weaponNameLabel.Name = "weaponNameLabel";
-			weaponNameLabel.Size = new Size(76, 15);
-			weaponNameLabel.TabIndex = 5;
-			weaponNameLabel.Text = "Weapon Title";
-			// 
-			// progressBar1
-			// 
-			progressBar1.Location = new Point(439, 633);
-			progressBar1.Name = "progressBar1";
-			progressBar1.Size = new Size(375, 23);
-			progressBar1.TabIndex = 6;
-			// 
-			// btnSaveProgress
-			// 
-			btnSaveProgress.BackColor = SystemColors.ButtonFace;
-			btnSaveProgress.Location = new Point(439, 662);
-			btnSaveProgress.Name = "btnSaveProgress";
-			btnSaveProgress.Size = new Size(124, 23);
-			btnSaveProgress.TabIndex = 7;
-			btnSaveProgress.Text = "Save to File";
-			btnSaveProgress.UseVisualStyleBackColor = false;
-			btnSaveProgress.Click += btnSaveProgress_Click;
-			// 
-			// percentBox
-			// 
-			percentBox.Location = new Point(714, 663);
-			percentBox.Name = "percentBox";
-			percentBox.Size = new Size(100, 23);
-			percentBox.TabIndex = 8;
-			percentBox.Text = "%";
-			// 
-			// btnUpdateProgress
-			// 
-			btnUpdateProgress.Location = new Point(569, 662);
-			btnUpdateProgress.Name = "btnUpdateProgress";
-			btnUpdateProgress.Size = new Size(139, 23);
-			btnUpdateProgress.TabIndex = 9;
-			btnUpdateProgress.Text = "Update Progress Grid";
-			btnUpdateProgress.UseVisualStyleBackColor = true;
-			btnUpdateProgress.Click += btnUpdateProgress_Click;
-			// 
-			// btnAddWeapon
-			// 
-			btnAddWeapon.Location = new Point(193, 388);
-			btnAddWeapon.Name = "btnAddWeapon";
-			btnAddWeapon.Size = new Size(120, 23);
-			btnAddWeapon.TabIndex = 10;
-			btnAddWeapon.Text = "Add a new weapon";
-			btnAddWeapon.UseVisualStyleBackColor = true;
-			btnAddWeapon.Click += btnAddWeapon_Click;
 			// 
 			// groupBox1
 			// 
@@ -312,7 +153,7 @@
 			groupBox1.Controls.Add(label5);
 			groupBox1.Controls.Add(label4);
 			groupBox1.Controls.Add(label3);
-			groupBox1.Location = new Point(100, 295);
+			groupBox1.Location = new Point(87, 271);
 			groupBox1.Name = "groupBox1";
 			groupBox1.Size = new Size(346, 415);
 			groupBox1.TabIndex = 11;
@@ -545,6 +386,165 @@
 			label3.TabIndex = 0;
 			label3.Text = "Name";
 			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Location = new Point(15, 178);
+			label2.Name = "label2";
+			label2.Size = new Size(222, 15);
+			label2.TabIndex = 8;
+			label2.Text = "Camos Unlocked at Level: (Gold Enigma)\r\n";
+			// 
+			// camoUnlockLabel
+			// 
+			camoUnlockLabel.BackColor = SystemColors.ButtonFace;
+			camoUnlockLabel.BorderStyle = BorderStyle.FixedSingle;
+			camoUnlockLabel.Location = new Point(18, 193);
+			camoUnlockLabel.Name = "camoUnlockLabel";
+			camoUnlockLabel.Size = new Size(400, 73);
+			camoUnlockLabel.TabIndex = 3;
+			camoUnlockLabel.Text = "Camo Unlock";
+			// 
+			// levelChallengeLabel
+			// 
+			levelChallengeLabel.BackColor = SystemColors.ButtonFace;
+			levelChallengeLabel.BorderStyle = BorderStyle.FixedSingle;
+			levelChallengeLabel.Location = new Point(18, 52);
+			levelChallengeLabel.Name = "levelChallengeLabel";
+			levelChallengeLabel.Size = new Size(400, 106);
+			levelChallengeLabel.TabIndex = 2;
+			levelChallengeLabel.Text = "Levels and Challenges";
+			// 
+			// typeLabel
+			// 
+			typeLabel.AutoSize = true;
+			typeLabel.Location = new Point(151, 24);
+			typeLabel.Name = "typeLabel";
+			typeLabel.Size = new Size(31, 15);
+			typeLabel.TabIndex = 1;
+			typeLabel.Text = "Type";
+			// 
+			// nameLabel
+			// 
+			nameLabel.AutoSize = true;
+			nameLabel.Location = new Point(18, 24);
+			nameLabel.Name = "nameLabel";
+			nameLabel.Size = new Size(39, 15);
+			nameLabel.TabIndex = 0;
+			nameLabel.Text = "Name";
+			// 
+			// dgvCamoProgress
+			// 
+			dgvCamoProgress.AutoGenerateColumns = false;
+			dgvCamoProgress.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvCamoProgress.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, typeDataGridViewTextBoxColumn, camoComplete });
+			dgvCamoProgress.DataSource = weaponBindingSource;
+			dgvCamoProgress.Location = new Point(439, 417);
+			dgvCamoProgress.Name = "dgvCamoProgress";
+			dgvCamoProgress.Size = new Size(375, 210);
+			dgvCamoProgress.TabIndex = 4;
+			dgvCamoProgress.CellContentClick += dgvCamoProgress_CellContentClick;
+			// 
+			// nameDataGridViewTextBoxColumn
+			// 
+			nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+			nameDataGridViewTextBoxColumn.HeaderText = "Name";
+			nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+			// 
+			// typeDataGridViewTextBoxColumn
+			// 
+			typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+			typeDataGridViewTextBoxColumn.HeaderText = "Type";
+			typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+			// 
+			// camoComplete
+			// 
+			camoComplete.HeaderText = "Camo Complete";
+			camoComplete.Name = "camoComplete";
+			// 
+			// weaponBindingSource
+			// 
+			weaponBindingSource.DataSource = typeof(Weapon);
+			// 
+			// weaponInfoTextBox
+			// 
+			weaponInfoTextBox.Location = new Point(489, 70);
+			weaponInfoTextBox.Name = "weaponInfoTextBox";
+			weaponInfoTextBox.Size = new Size(355, 23);
+			weaponInfoTextBox.TabIndex = 4;
+			weaponInfoTextBox.TextChanged += weaponInfoTextBox_TextChanged;
+			// 
+			// zombieeeee
+			// 
+			zombieeeee.FileName = "openFileDialog1";
+			// 
+			// GetData
+			// 
+			GetData.BackColor = SystemColors.ButtonFace;
+			GetData.Location = new Point(44, 506);
+			GetData.Name = "GetData";
+			GetData.Size = new Size(75, 23);
+			GetData.TabIndex = 3;
+			GetData.Text = "Open File";
+			GetData.UseVisualStyleBackColor = false;
+			GetData.Click += GetData_Click;
+			// 
+			// weaponNameLabel
+			// 
+			weaponNameLabel.AutoSize = true;
+			weaponNameLabel.BackColor = SystemColors.ButtonFace;
+			weaponNameLabel.Location = new Point(407, 72);
+			weaponNameLabel.Name = "weaponNameLabel";
+			weaponNameLabel.Size = new Size(76, 15);
+			weaponNameLabel.TabIndex = 5;
+			weaponNameLabel.Text = "Weapon Title";
+			// 
+			// progressBar1
+			// 
+			progressBar1.Location = new Point(439, 633);
+			progressBar1.Name = "progressBar1";
+			progressBar1.Size = new Size(375, 23);
+			progressBar1.TabIndex = 6;
+			// 
+			// btnSaveProgress
+			// 
+			btnSaveProgress.BackColor = SystemColors.ButtonFace;
+			btnSaveProgress.Location = new Point(439, 662);
+			btnSaveProgress.Name = "btnSaveProgress";
+			btnSaveProgress.Size = new Size(124, 23);
+			btnSaveProgress.TabIndex = 7;
+			btnSaveProgress.Text = "Save to File";
+			btnSaveProgress.UseVisualStyleBackColor = false;
+			btnSaveProgress.Click += btnSaveProgress_Click;
+			// 
+			// percentBox
+			// 
+			percentBox.Location = new Point(714, 663);
+			percentBox.Name = "percentBox";
+			percentBox.Size = new Size(100, 23);
+			percentBox.TabIndex = 8;
+			percentBox.Text = "%";
+			// 
+			// btnUpdateProgress
+			// 
+			btnUpdateProgress.Location = new Point(569, 662);
+			btnUpdateProgress.Name = "btnUpdateProgress";
+			btnUpdateProgress.Size = new Size(139, 23);
+			btnUpdateProgress.TabIndex = 9;
+			btnUpdateProgress.Text = "Update Progress Grid";
+			btnUpdateProgress.UseVisualStyleBackColor = true;
+			btnUpdateProgress.Click += btnUpdateProgress_Click;
+			// 
+			// btnAddWeapon
+			// 
+			btnAddWeapon.Location = new Point(193, 506);
+			btnAddWeapon.Name = "btnAddWeapon";
+			btnAddWeapon.Size = new Size(120, 23);
+			btnAddWeapon.TabIndex = 10;
+			btnAddWeapon.Text = "Add a new weapon";
+			btnAddWeapon.UseVisualStyleBackColor = true;
+			btnAddWeapon.Click += btnAddWeapon_Click;
+			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -574,10 +574,10 @@
 			Load += Form1_Load;
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)dgvCamoProgress).EndInit();
-			((System.ComponentModel.ISupportInitialize)weaponBindingSource).EndInit();
 			groupBox1.ResumeLayout(false);
 			groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)dgvCamoProgress).EndInit();
+			((System.ComponentModel.ISupportInitialize)weaponBindingSource).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}

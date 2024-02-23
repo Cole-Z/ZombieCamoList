@@ -17,6 +17,8 @@ using System.IO;
  * with staying orgainized and on top of what I need to do next. A small video showing the functionality will be provided as well!  
  */
 
+// data referenced: https://docs.google.com/document/d/19BX8GV-puuzX8zK1xtmkNe96lDH9sMUbxxf-rSQSIP4/edit#heading=h.tsfnft54kk8v (reddit user: u/Galactical-Wolf)
+
 namespace ZombieCamoList
 {
 	public partial class Form1 : Form
@@ -41,7 +43,7 @@ namespace ZombieCamoList
 		}
 		private void Form1_Load(object sender, EventArgs e)
 		{
-
+			btnAddWeapon.Enabled = false;
 		}
 
 		/*######################################################################################################################
@@ -101,6 +103,7 @@ namespace ZombieCamoList
 
 					PopulateWeaponList();
 					GetData.Enabled = false;
+					btnAddWeapon.Enabled = true;
 				}
 			}
 			catch (Exception ex)
@@ -330,6 +333,7 @@ namespace ZombieCamoList
 
 				// Add the new weapon to the array
 				weapons[weapons.Length - 1] = newWeapon;
+				ClearForm();
 
 				MessageBox.Show("New weapon added successfully!", "Success");
 
@@ -349,6 +353,11 @@ namespace ZombieCamoList
 		}
 
 		private void btnClose_Click(object sender, EventArgs e)
+		{
+			ClearForm();
+		}
+
+		private void ClearForm()
 		{
 			textBox1.Text = string.Empty;
 			textBox2.Text = string.Empty;
