@@ -57,69 +57,16 @@ namespace ZombieCamoList
 
 			try
 			{
-				using (StreamReader sr = File.OpenText(myFile))
-				{
-					recordCount = File.ReadLines(myFile).Count() - 1;
+				// Call the common method to load data
+				LoadDataFromFile();
 
-					weapons = new Weapon[recordCount];
-
-					sr.ReadLine();
-					int i = 0;
-					while (sr.Peek() != -1 && i < recordCount)
-					{
-						string[] weaponTemp = sr.ReadLine().Split(",");
-						// Create a new instance of Weapon and add it to the weapons array
-						Weapon newWeapon = new Weapon(weaponTemp[0], weaponTemp[1]);
-						weapons[i] = newWeapon;
-						i++;
-					}
-					sr.Close();
-					MessageBox.Show(i.ToString() + " Weapon Classes were read in.", "Data Uploaded");
-
-					// populate weapon levels
-					using (StreamReader sr2 = File.OpenText(myFile))
-					{
-						sr2.ReadLine();
-						int j = 0;
-						while (sr2.Peek() != -1 && j < recordCount)
-						{
-							string line = sr2.ReadLine();
-							string[] weaponTemp = line.Split(",");
-							Weapon currentWeapon = weapons[j];
-
-							// Add the levels, challenges, and camos to the current weapon
-							for (int k = 2; k < weaponTemp.Length; k += 3) // increment by 3 to grab fields (Level, Challenge, Camo).
-							{
-								if (k + 2 < weaponTemp.Length)
-								{
-									// add WeaponLevel to the Levels list of the corresponding weapon
-									currentWeapon.Levels.Add(new WeaponLevel(int.Parse(weaponTemp[k]), weaponTemp[k + 1], weaponTemp[k + 2]));
-								}
-							}
-							j++;
-						}
-						sr2.Close();
-					}
-
-					PopulateWeaponList();
-					GetData.Enabled = false;
-					btnAddWeapon.Enabled = true;
-				}
+				GetData.Enabled = false;
+				btnAddWeapon.Enabled = true;
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show($"Error parsing file: {ex.Message}", "Error");
 			}
-
-			// creating the datagrid view and using weapons as data source
-
-			dgvCamoProgress.DataSource = weapons;
-			dgvCamoProgress.Columns[0].Width = 115;
-			dgvCamoProgress.Columns[1].Width = 115;
-			dgvCamoProgress.RowHeadersWidth = 30;
-
-			LoadCheckboxStatus(); // call LoadCheckboxStatus(); to update progress without user interaction.
-			ProgressBar();        // call ProgressBar(); for visual on progression on camos.
 		}
 
 		/*######################################################################################################################
@@ -149,6 +96,59 @@ namespace ZombieCamoList
 					camoUnlockLabel.Text += $"Camo Unlock {level.Level}: {level.CamoUnlock}\n";
 				}
 			}
+		}
+
+		private void LoadDataFromFile()
+		{
+			using (StreamReader sr = File.OpenText(myFile))
+			{
+				recordCount = File.ReadLines(myFile).Count() - 1;
+				weapons = new Weapon[recordCount];
+				sr.ReadLine(); // Skip header
+
+				int i = 0;
+				while (sr.Peek() != -1 && i < recordCount)
+				{
+					string[] weaponTemp = sr.ReadLine().Split(",");
+					// Create a new instance of Weapon and add it to the weapons array
+					Weapon newWeapon = new Weapon(weaponTemp[0], weaponTemp[1]);
+					weapons[i] = newWeapon;
+					i++;
+				}
+
+				// populate weapon levels
+				sr.BaseStream.Position = 0; // Reset stream position to beginning of file
+				sr.ReadLine(); // Skip header again
+
+				int j = 0;
+				while (sr.Peek() != -1 && j < recordCount)
+				{
+					string line = sr.ReadLine();
+					string[] weaponTemp = line.Split(",");
+					Weapon currentWeapon = weapons[j];
+
+					// Add the levels, challenges, and camos to the current weapon
+					for (int k = 2; k < weaponTemp.Length; k += 3) // increment by 3 to grab fields (Level, Challenge, Camo).
+					{
+						if (k + 2 < weaponTemp.Length)
+						{
+							// add WeaponLevel to the Levels list of the corresponding weapon
+							currentWeapon.Levels.Add(new WeaponLevel(int.Parse(weaponTemp[k]), weaponTemp[k + 1], weaponTemp[k + 2]));
+						}
+					}
+					j++;
+				}
+			}
+
+			PopulateWeaponList();
+			// Update UI
+			dgvCamoProgress.DataSource = weapons;
+			dgvCamoProgress.Columns[0].Width = 115;
+			dgvCamoProgress.Columns[1].Width = 115;
+			dgvCamoProgress.RowHeadersWidth = 30;
+
+			LoadCheckboxStatus(); // call LoadCheckboxStatus(); to update progress without user interaction.
+			ProgressBar();        // call ProgressBar(); for visual on progression on camos.
 		}
 
 		/*######################################################################################################################
@@ -196,6 +196,21 @@ namespace ZombieCamoList
 			catch (Exception ex)
 			{
 				MessageBox.Show($"Error loading checkbox statuses: {ex.Message}", "Error");
+			}
+		}
+
+		private void LoadWeaponListOnUpdate()
+		{
+			try
+			{
+				if (File.Exists(myFile))
+				{
+					LoadDataFromFile();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Error loading file: {ex.Message}", "Error");
 			}
 		}
 
@@ -325,6 +340,7 @@ namespace ZombieCamoList
 				MessageBox.Show("New weapon added successfully! Reload Form to see newly added weapon", "Success");
 				ClearForm();
 				PopulateWeaponList();
+				LoadWeaponListOnUpdate(); // update the list and dgv in real time
 			}
 			catch (Exception ex)
 			{
