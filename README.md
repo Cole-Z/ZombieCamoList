@@ -39,6 +39,17 @@ check off the weapons you just completed to update your progress and save the pr
 
 ![update_progress](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/4fa3097b-f28b-4419-84a7-951359d78b13)
 
+## Adding a new Weapon to file
+
+Often, Call of Duty will release a new weapon for a new seaon. In this form, you can also add a new weapon if one is added in a new season update.
+
+![add_new_weapon](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/9c9f8997-9a3b-47c0-bee5-019023647c61)
+
+
+Once added, you can view the weapon and its details within the textboxes and list boxes as well see it in the update progress section.
+
+
+
 
 
 
