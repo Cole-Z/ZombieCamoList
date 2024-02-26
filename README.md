@@ -7,7 +7,39 @@ users can then click on a weapon to see the challenges, levels, and camos uncloc
 number of checkboxes, checked for each completed gun. Project is a great way to keep track of your progress locally, as this can be a very long process and the in-game
 UI, is clunky and hard to keep track of in my opinion.
 
+## Setup
+
+Grab the 'progress.txt' file from the data sources folder and place it in the projects bin folder located in the solution. (Same folder as the applications .exe file)
 
 `clone repo`
+
+## Interface
+
+In order to fill the application with the data, use the 'open file' button to open the 'zombie_camo_mw3.txt' file
+
+![interfaceZombie](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/476b04d3-a095-4f5e-a37d-5d22f348e675)
+
+
+## Reading text files
+
+Once you upload the text file, you then will be shown all weapons and their details
+
+![interface_data_loaded](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/331e7593-f944-46e9-af7e-91fc4940b24f)
+
+## Selecting a weapon
+
+Once a weapon is selected, you then will be shown the levels, challenges, and camos for each tier on the selected weapon.
+
+![weapon_select](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/06005865-e1ac-45ca-9405-3370cd164dac)
+
+## Saving Progress
+
+You can also update your progress while the app is running, lets say you knock out a a couple weapons and want to start on others while in game. You can
+check off the weapons you just completed to update your progress and save the progress to your file.
+
+![update_progress](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/4fa3097b-f28b-4419-84a7-951359d78b13)
+
+
+
 
 
