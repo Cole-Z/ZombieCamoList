@@ -1,0 +1,47 @@
+BP50,Assault Rifle,9,"250 Kills while rare",Shadow Sting,14,"250 Kills with frost damage",Palette Diffusion,20,"50 Mercenary kills",Microbial
+BP50,Assault Rifle,9,"250 Kills while rare",Shadow Sting,14,"250 Kills with frost damage",Palette Diffusion,20,"50 Mercenary kills",Microbial
+SVA 545,Assault Rifle,13,"5 Kills without releasing trigger 20 times",Topo Ghast,20,"250 Kills in med-high threat zones",Sludge,30,"250 Kills with 4 perks active",Chaos
+RAM-7,Assault Rifle,11,"250 Hipfire kills",Decayed Sands,18,"100 Kills shortly after using a field upgrade",Greed Blur,27,"200 Critical kills",Incurable
+MTZ-556,Assault Rifle,11,"250 Kills with 5 attachments",Murk Glitch,17,"250 Kills with 4 perks active",New Strain,26,"Get 20 kills without taking damage 10 times",Mud
+Holger 556,Assault Rifle,10,"Get 10 kills in 5 seconds 10 times",Topo Gloom,16,"Get 250 kills in tac stance",Palette Cyst,24,"200 Critical kills",Caustic River
+MCW,Assault Rifle,12,"Get 10 kills in 5 seconds 10 times",Vehement Rage,19,"250 Hipfire kills",Tempest Shards,28,"Kill 5 mimics",Toxic Spots
+DG-58,Assault Rifle,11,"Get 10 kills in 5 seconds 10 times",Hysteria,17,"100 Kills on enemies affected by tacticals",Hallowed Glitch,25,"200 Critical kills",Petrified
+FR 5.56,Assault Rifle,8,"300 Critical kills",Digital Wildwood,13,"Kill 30 Hellhounds",Unseen Ravager,19,"250 Hipfire kills",Anomaly
+BAS-B,Battle Rifle,12,"250 Kills in med-high threat zones",Spirit Glitch,19,"250 Kills with frost damage",Forest Sands,29,"Get 20 kills without taking damage 10 times",Black Satin
+Sidewinder,Battle Rifle,12,"10 Mangler kills",Tide Surge,28,"200 Critical kills",Cacophony,28,"250 Point blank kills",Green Satin
+MTZ-762,Battle Rifle,10,"250 Kills while rare",Topo Sickly,23,"50 Mercenary kills",Alert,23,"100 Kills shortly after using a field upgrade",Orange Satin
+RAM-9,SMG,10,"250 Kills with frost damage",Biomass,16,"100 Kills shortly after using a field upgrade",Putrid Locust,24,"10 Disciple kills",Mystic Wither
+Striker,SMG,10,"30 Hellhound kills",Topo Blaze,15,"250 Kills while rare",Inner Demon,23,"250 Kills with 5 attachments",Living Tissue
+HRM-9,SMG,8,"50 Mercenary kills",Crimson Sands,12,"250 Kills with frost damage",Burning Blur,18,"10 Kills in 5 seconds 10 times",Empty Screams
+WSP Swarm,SMG,11,"250 Point blank kills",Unmarked Grave,18,"5 Mimics",Terracotta,27,"250 Kills in med-high threat zones",Death Form
+AMR9,SMG,12,"250 Kills with frost damage",Toxic Sands,19,"20 Kills without taking damage 10 times",Ferver,29,"250 Kills with 5 attachments",Torment Glitch
+WSP-9,SMG,12,"100 Kills in 1 match",Splintered,19,"250 Kills with fire damage",Oracle,28,"10 Kills in 5 seconds 10 times",Decrepit
+Rival-9,SMG,9,"5 Mimic kills",Cartilage,14,"100 Kills shortly after using a field upgrade",Tomb Glitch,20,"250 Kills with toxic damage",Cold Snap
+Striker-9,SMG,11,"250 Hipfire kills",Topo Gargoyle,17,"250 Kills with toxic damage",Midnight Sands,25,"250 Kills in tac stance",Illusions
+Lockwood680,Shotgun,11,"250 Hipfire kills",Palette Rage,18,"250 Kills with electric damage",Magma Beast,27,"20 Kills without taking damage 10 times",Riddled
+Haymaker,Shotgun,9,"250 Kills with 4 perks",Below Zero,15,"250 Kills in a med-high threat zone",Palette Burned,22,"10 Kills in 5 seconds 10 times",Inkblot
+Riveter,Shotgun,10,"10 Kills in 5 seconds 10 times",Global Panic,16,"250 Kills with fire damage",Palette Infected,24,"10 Mangler kills",Melting Hope
+TAQEvolvere,LMG,8,"20 Kills without taking damage 10 times",Palette Shade,13,"250 Kills with fire damage",Mummified Brush,19,"10 Kills without reloading 10 times",Fluctuation
+Pulemyot762,LMG,12,"100 Kills in a single match",Pain Glitch,19,"250 Kills while rare",Purple Ooze,28,"5 Mimic kills",Blurred Myopia
+DG-58LSW,LMG,12,"250 Kills in tac stance",Topo Spirit,19,"250 Kills while rare",Stonework,29,"200 Critical kills",Spectral Sight
+Holger26,LMG,9,"10 Kills without reloading 10 times",Drowned Sands,14,"10 Kills in 5 seconds 10 times",Patchwork,20,"10 Disciple kills",Dazed
+TAQEradicator,LMG,9,"10 Mangler kills",Unknown Visitor,15,"10 Kills without reloading 10 times",Palette Scorched,22,"250 Kills while rare",Mysterious
+BruenMK9,LMG,9,"250 Kills while rare",Jagged Edges,14,"250 Kills with 4 perks",Avaricious,20,"250 Kills with fire damage",Shin Rippers
+KVDEnforcer,Marksman Rifle,13,"10 Disciple kills",Palette Cursed,20,"10 Kills in 5 seconds 10 times",Grim Reaper,30,"250 Kills in med-high threat zones",Thanatos
+MCW6.8,Marksman Rifle,10,"100 Kills on enemies affected by a tactical",Topo Ooze,16,"250 Kills while rare",Decay,24,"200 Critical Kills",Unyielding
+DM56,Marksman Rifle,10,"250 Kills with 5 attachments",Rusted Brush,15,"10 Mangler kills",Golden Sands,23,"250 Kills in tac stance",Damned Souls
+MTZInterceptor,Marksman Rifle,8,"100 Kills shortly after using field upgrades",Blood Brush,12,"30 Hellhound kills",Slash Glitch,18,"250 Kills while rare",Destiny
+XRKStalker,Sniper Rifle,14,250 Kills with frost damage,Brimstone Brush,21,250 Kills with 4 perks,Trapped
+KATT-AMR,Sniper Rifle,17,200 Critical kills,Palette Corpse,27,250 Kills while rare,Dimensional Shift
+Longbow,Sniper Rifle,21,250 Kills with fire damage,Palette Adjudicator,31,250 Kills while rare,Puzzled
+KVInhibitor,Sniper Rifle,22,5 Mimic kills,Palette Grove,33,250 Kills with fire damage,Strung Organs
+COR-45,Pistol,14,250 Kills with fire damage,Grief Manifest,21,250 Kills with 4 perks
+Renetti,Pistol,14,10 Disciple kills,Radio Waves,21,250 Kills with 4 perks
+TYR,Pistol,17,250 Kills with frost damage,Crystal Palace,26,10 Kills in 5 seconds 10 times
+WSP Stinger,Pistol,10,250 Kills with electric damage,Apocalyptic,14,250 Kills with 5 attachments
+RGL-80,Launcher,2,Get 250 kills,Pathosis
+Stormender,Launcher,4,Get 250 Kills,Deformed
+Gutter Knife,Melee,4,Get 250 Kills,Foam Sands
+Karambit,Melee,4,Get 250 Kills,Ripped
+Kilo,AR,1,foo,var,2,foo,bar,3,foo ,bar
+New Meta,SUB,1,t,y,3,f,g,8,k,l
