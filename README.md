@@ -11,7 +11,11 @@ UI, is clunky and hard to keep track of in my opinion.
 
 Grab the 'progress.txt' file from the data sources folder and place it in the projects bin folder located in the solution. (Same folder as the applications .exe file)
 
-`clone repo`
+`git clone https://github.com/Cole-Z/ZombieCamoList.git`
+
+`dotnet build`
+
+`dotnet run`
 
 ## Interface
 
