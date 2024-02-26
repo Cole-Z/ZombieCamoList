@@ -48,9 +48,9 @@ Often, Call of Duty will release a new weapon for a new seaon. In this form, you
 
 Once added, you can view the weapon and its details within the textboxes and list boxes as well see it in the update progress section.
 
+![display_saved_weapon](https://github.com/Cole-Z/ZombieCamoList/assets/98670265/eee78412-c2c0-4bef-99a5-1f81a1dff87b)
 
-
-
+Thanks for checking it out!
 
 
 
